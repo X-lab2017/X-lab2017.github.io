@@ -191,6 +191,6 @@ changes to be accepted, the CLA must be signed.
 
 [pr-template]: ./.github/pull_request_template.md
 
-[issue-template]: ./.github/issue_template.md
+[issue-template]: ./.github/ISSUE_TEMPLATE/enhancement.md
 
 [cla]: https://cla-assistant.io/X-lab2017/x-lab.github.io
