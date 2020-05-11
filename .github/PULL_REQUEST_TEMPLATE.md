@@ -20,17 +20,3 @@ Thank you for your interest in and contributing to Hypertrons! Follow this check
 <!-- Please list out what major changes were made in this PR to address the issue: -->
 
 -   No changes.
-
-## Checklist
-
--   **Are tests written for added code?**
-    <!-- If not, why not? -->
-    -   [ ] Yes
-    -   [ ] No because:
-
--   **Did you introduce any new dependencies?**
-    <!-- If so, which ones? -->
-    -   [ ] No
-    -   [ ] Yes
-        -   Dependency:
-        -   Reason:
