@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts | X-Lab - 技术传播文明，践行同步世界</title>
+    <link>https://X-lab2017.github.io/post/</link>
+      <atom:link href="https://X-lab2017.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>https://X-lab2017.github.io/images/logo_hu3ace0f88f5b266a672736d37108d6485_140636_300x300_fit_lanczos_2.png</url>
+      <title>Posts</title>
+      <link>https://X-lab2017.github.io/post/</link>
+    </image>
+    
+  </channel>
+</rss>
