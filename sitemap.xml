@@ -3,15 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.x-lab.info/authors/</loc>
+    <loc>http://www.x-lab.info/project/gitcourse/</loc>
+    <lastmod>2020-05-30T14:41:40+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.x-lab.info/categories/</loc>
+    <loc>http://www.x-lab.info/project/</loc>
+    <lastmod>2020-05-30T14:41:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/</loc>
+    <lastmod>2020-05-30T14:41:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/tag/algorithm/</loc>
+    <lastmod>2020-05-29T20:46:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/category/algorithm/</loc>
+    <lastmod>2020-05-29T20:46:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/authors/</loc>
+    <lastmod>2020-05-29T20:46:57+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.x-lab.info/post/</loc>
+    <lastmod>2020-05-29T20:46:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/categories/</loc>
+    <lastmod>2020-05-29T20:46:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/tags/</loc>
+    <lastmod>2020-05-29T20:46:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/post/sort-algorithm/</loc>
+    <lastmod>2020-05-29T20:46:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/author/%E6%96%B9%E5%AD%9D%E5%90%9B/</loc>
+    <lastmod>2020-05-29T20:46:57+08:00</lastmod>
   </url>
   
   <url>
@@ -27,15 +70,7 @@
   </url>
   
   <url>
-    <loc>http://www.x-lab.info/tags/</loc>
-  </url>
-  
-  <url>
     <loc>http://www.x-lab.info/author/x-lab/</loc>
-  </url>
-  
-  <url>
-    <loc>http://www.x-lab.info/</loc>
   </url>
   
   <url>
@@ -92,10 +127,6 @@
   
   <url>
     <loc>http://www.x-lab.info/author/%E5%BE%90%E5%BD%A6%E5%86%9B/</loc>
-  </url>
-  
-  <url>
-    <loc>http://www.x-lab.info/author/%E6%96%B9%E5%AD%9D%E5%90%9B/</loc>
   </url>
   
   <url>
