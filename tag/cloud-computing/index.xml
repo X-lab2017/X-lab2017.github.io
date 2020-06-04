@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>刘畅 | X-Lab - 技术传播文明，践行同步世界</title>
-    <link>http://www.x-lab.info/author/%E5%88%98%E7%95%85/</link>
-      <atom:link href="http://www.x-lab.info/author/%E5%88%98%E7%95%85/index.xml" rel="self" type="application/rss+xml" />
-    <description>刘畅</description>
+    <title>cloud computing | X-Lab - 技术传播文明，践行同步世界</title>
+    <link>http://www.x-lab.info/tag/cloud-computing/</link>
+      <atom:link href="http://www.x-lab.info/tag/cloud-computing/index.xml" rel="self" type="application/rss+xml" />
+    <description>cloud computing</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 X-Lab</copyright><lastBuildDate>Sat, 30 May 2020 14:41:40 +0800</lastBuildDate>
     <image>
-      <url>http://www.x-lab.info/author/%E5%88%98%E7%95%85/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q90_lanczos_center.jpg</url>
-      <title>刘畅</title>
-      <link>http://www.x-lab.info/author/%E5%88%98%E7%95%85/</link>
+      <url>http://www.x-lab.info/images/logo_hu3ace0f88f5b266a672736d37108d6485_140636_300x300_fit_lanczos_2.png</url>
+      <title>cloud computing</title>
+      <link>http://www.x-lab.info/tag/cloud-computing/</link>
     </image>
     
     <item>
