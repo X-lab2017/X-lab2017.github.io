@@ -4,7 +4,52 @@
   
   <url>
     <loc>http://www.x-lab.info/authors/</loc>
-    <lastmod>2020-06-04T14:02:35+08:00</lastmod>
+    <lastmod>2020-06-07T16:43:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/post/</loc>
+    <lastmod>2020-06-07T16:43:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/categories/</loc>
+    <lastmod>2020-06-07T16:43:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/tags/</loc>
+    <lastmod>2020-06-07T16:43:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/tag/technology/</loc>
+    <lastmod>2020-06-07T16:43:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/category/technology/</loc>
+    <lastmod>2020-06-07T16:43:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/post/writing-technical-content/</loc>
+    <lastmod>2020-06-07T16:43:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/</loc>
+    <lastmod>2020-06-07T16:43:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/author/%E6%96%B9%E5%AD%9D%E5%90%9B/</loc>
+    <lastmod>2020-06-07T16:43:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/post/jupyter/</loc>
+    <lastmod>2020-06-07T16:33:21+08:00</lastmod>
   </url>
   
   <url>
@@ -18,27 +63,12 @@
   </url>
   
   <url>
-    <loc>http://www.x-lab.info/categories/</loc>
-    <lastmod>2020-06-04T14:02:35+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.x-lab.info/project/hypertrons/</loc>
     <lastmod>2020-06-04T14:02:35+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.x-lab.info/project/</loc>
-    <lastmod>2020-06-04T14:02:35+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.x-lab.info/tags/</loc>
-    <lastmod>2020-06-04T14:02:35+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.x-lab.info/</loc>
     <lastmod>2020-06-04T14:02:35+08:00</lastmod>
   </url>
   
@@ -78,17 +108,7 @@
   </url>
   
   <url>
-    <loc>http://www.x-lab.info/post/</loc>
-    <lastmod>2020-05-29T20:46:57+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.x-lab.info/post/sort-algorithm/</loc>
-    <lastmod>2020-05-29T20:46:57+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.x-lab.info/author/%E6%96%B9%E5%AD%9D%E5%90%9B/</loc>
     <lastmod>2020-05-29T20:46:57+08:00</lastmod>
   </url>
   
