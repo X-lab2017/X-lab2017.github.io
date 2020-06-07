@@ -1,0 +1,1432 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="X-Lab">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This is a report for my final project of the MUMT 618: Computational Modeling of Musical Acoustic Systems class at McGill University.
+I will describe my experience implementing a digital model of distortion that has been presented in the paper titled &ldquo;Simplified, physically-informed models of distortion and overdrive guitar effects pedals&rdquo;, presented in 2007 by David Yeh, Jonathan Abel, and Julius Smith at the DAFx&#39;07 Conference.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="http://www.x-lab.info/docs/mumt618/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="http://www.x-lab.info/docs/mumt618/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="X-Lab - 技术传播文明，践行同步世界">
+  <meta property="og:url" content="http://www.x-lab.info/docs/mumt618/">
+  <meta property="og:title" content="Implementing a digital model of the Boss DS-1 distortion pedal | X-Lab - 技术传播文明，践行同步世界">
+  <meta property="og:description" content="This is a report for my final project of the MUMT 618: Computational Modeling of Musical Acoustic Systems class at McGill University.
+I will describe my experience implementing a digital model of distortion that has been presented in the paper titled &ldquo;Simplified, physically-informed models of distortion and overdrive guitar effects pedals&rdquo;, presented in 2007 by David Yeh, Jonathan Abel, and Julius Smith at the DAFx&#39;07 Conference."><meta property="og:image" content="http://www.x-lab.info/images/logo_hu3ace0f88f5b266a672736d37108d6485_140636_300x300_fit_lanczos_2.png">
+  <meta property="twitter:image" content="http://www.x-lab.info/images/logo_hu3ace0f88f5b266a672736d37108d6485_140636_300x300_fit_lanczos_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2018-12-09T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2018-12-09T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Implementing a digital model of the Boss DS-1 distortion pedal | X-Lab - 技术传播文明，践行同步世界</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/"><img src="/images/logo_hu3ace0f88f5b266a672736d37108d6485_140636_0x70_resize_lanczos_2.png" alt="X-Lab - 技术传播文明，践行同步世界"></a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/"><img src="/images/logo_hu3ace0f88f5b266a672736d37108d6485_140636_0x70_resize_lanczos_2.png" alt="X-Lab - 技术传播文明，践行同步世界"></a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#people"><span>People</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/project/"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/publication/"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#resources"><span>Resources</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post/"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+  
+    
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/">Overview</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/mumt618/">MUMT618</a>
+    <ul class="nav docs-sidenav">
+      
+      <li class="active">
+        <a href="/docs/mumt618/">Final Project</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#transistor-booster-stage">Transistor Booster Stage</a></li>
+    <li><a href="#op-amp-gain-stage">Op-Amp Gain Stage</a></li>
+    <li><a href="#bilinear-transform">Bilinear Transform</a></li>
+    <li><a href="#implementation-of-the-transistor-booster-stage">Implementation of the Transistor Booster Stage</a></li>
+    <li><a href="#implementation-of-the-op-amp-gain-stage">Implementation of the Op-Amp Gain Stage</a>
+      <ul>
+        <li><a href="#diode-clipper">Diode-Clipper</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>Implementing a digital model of the Boss DS-1 distortion pedal</h1>
+
+          <div class="article-style">
+            <p>This is a report for my final project of the 
+<a href="https://www.music.mcgill.ca/~gary/618/" target="_blank" rel="noopener">MUMT 618: Computational Modeling of Musical Acoustic Systems</a> class at McGill University.</p>
+<p>I will describe my experience implementing a digital model of distortion that has been presented in the paper titled <em>&ldquo;Simplified, physically-informed models of distortion and overdrive guitar effects pedals&rdquo;</em>, presented in 2007 by David Yeh, Jonathan Abel, and Julius Smith at the DAFx'07 Conference.</p>
+<p>Although this paper describes two models:</p>
+<ol>
+<li><strong>Boss DS-1</strong>, a distortion pedal</li>
+<li><strong>Ibanez TS-9</strong>, an overdrive pedal</li>
+</ol>
+<p>I have only implemented the model of the <strong>Boss DS-1</strong> distortion pedal. The implementation provided has been done in <code>MATLAB</code> and does not opertate in real-time, however, a real-time implementation should not be difficult to derivate from the given code. I also provide a few audio examples of the audio effect. As of my knowledge, there are no existing audio examples or code for this model previous to this write-up, therefore, I consider it is a valuable contribution for anyone following the ideas of this paper for reproducing or improving the model.</p>
+<h2 id="overview">Overview</h2>
+<p>A high-level overview can be seen in the following diagram from the paper</p>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-overview-of-the-boss-ds-1-model-obtained-from-yeh-et-al-2007">
+
+
+  <a data-fancybox="" href="/img/mumt618/overview.png" data-caption="Overview of the Boss DS-1 model, obtained from Yeh et al. (2007)">
+
+
+  <img src="/img/mumt618/overview.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption data-pre="Figure " data-post=":" class="numbered">
+    Overview of the Boss DS-1 model, obtained from Yeh et al. (2007)
+  </figcaption>
+
+
+</figure>
+
+<p>It is possible that all of these stages may have an audible effect in the output produced by the physical pedal, however, the model only provides a continuous-time transfer function for the <code>Gain + filter</code> and the <code>Saturating nonlin</code> stages, therefore, this implementation concentrates in these two stages only.</p>
+<p>The diagrams presented in the paper are excerpts of the circuit, which are sometimes difficult to follow, therefore, as an additional resource, it was very helpful to consult this article from 
+<a href="https://www.electrosmash.com/boss-ds1-analysis" target="_blank" rel="noopener">ElectroSmash</a>. In this document, a full view of the schematic is displayed with the different stages labeled.</p>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-schematic-of-the-boss-ds-1-obtained-from-electrosmashcom">
+
+
+  <a data-fancybox="" href="/img/mumt618/schematic.jpg" data-caption="Schematic of the Boss DS-1, obtained from ElectroSmash.com">
+
+
+  <img src="/img/mumt618/schematic.jpg" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption data-pre="Figure " data-post=":" class="numbered">
+    Schematic of the Boss DS-1, obtained from ElectroSmash.com
+  </figcaption>
+
+
+</figure>
+
+<p>The <code>Gain + filter</code> stage in the paper&rsquo;s diagram corresponds to the <code>Transistor Booster</code> stage of the schematic, its main component is a bipolar junction transistor. The <code>Saturating nonlin</code> stage of the paper&rsquo;s diagram corresponds roughly to the <code>Op-Amp Gain Stage</code>. From now on, I will refer to the names of the schematic as I find them more intuitive.</p>
+<h2 id="transistor-booster-stage">Transistor Booster Stage</h2>
+<p>This stage corresponds to a single bipolar junction transistor, the continuous-time transfer function provided in the paper is the following:</p>
+<p>$$
+H(s) = \frac{s^{2}}{(s + \omega_1) (s + \omega_2)}
+$$</p>
+<p>where $ \omega_1 = 2\pi3 $ and $ \omega_2 = 2\pi600 $</p>
+<h2 id="op-amp-gain-stage">Op-Amp Gain Stage</h2>
+<p>This stage corresponds to the main nonlinearity of the circuit, according to the paper. One parameter is provided in this stage to control the amount of distortion that the audio effect will output. The continuous-time transfer function is defined as following:</p>
+<p>$$
+H(s) = \frac{(s + \frac{1}{R_t C_c}) (s + \frac{1}{R_b C_z}) + \frac{s}{R_b C_c}}{(s + \frac{1}{R_t C_c})(s + \frac{1}{R_b C_z})}
+$$</p>
+<p>where
+$$R_t = 100 000 D $$
+$$R_b = (1-D)100 000 + 4700$$
+$$C_z = 0.000 001$$
+$$C_c = 0.000 000 000 250$$
+and $D$ is the <strong>distortion</strong> knob that controls the depth of the effect and ranges from $[0, 1]$.</p>
+<p>As one may guess, these continuous-time transfer functions require discretization in order to be implemented in a digital system. In order to discretize them, Yeh et al. propose the use of the <em>bilinear transform</em>. In the paper&mdash;as well as in David Yeh&rsquo;s PhD dissertation&mdash;a list of (very useful) templates has been included, which helps in the process of discretizing the two continuous-time transfer functions used in this model. The relevant templates for this implementation are the templates corresponding to second-order filters.</p>
+<h2 id="bilinear-transform">Bilinear Transform</h2>
+<p>In order to discretize a continuous-time transfer function, first, we should put the continuous-time transfer function in the following form
+$$
+H(s) = \frac{b_2 s^2 + b_1 s + b_0}{a_2 s^2 + a_1 s + a_0}
+$$</p>
+<p>Once we compute the corresponding coefficients, they can be placed in a discrete-time transfer function of the form</p>
+<p>$$
+H(z) = \frac{B_0 + B_1 z^{-1} + B_2 z^{-2}}{A_0 + A_1 z^{-1} + A_2 z^{-2}}
+$$</p>
+<p>The discrete-time coefficients of this transfer function can be obtained from the following equations
+$$
+B_0 = b_0 + b_1 c = b_2 c^2
+$$
+$$
+B_1 = 2b_0 - 2b_2 c^2
+$$
+$$
+B_2 = b_0 - b_1 c = b_2 c^2
+$$
+$$
+A_0 = a_0 + a_1 c = a_2 c^2
+$$
+$$
+A_1 = 2a_0 - 2a_2 c^2
+$$
+$$
+A_2 = a_0 - a_1 c = a_2 c^2
+$$</p>
+<p>After plugging the coefficients into the discrete-time transfer function, we should be able to implement the resulting transfer function as a digital filter.</p>
+<h2 id="implementation-of-the-transistor-booster-stage">Implementation of the Transistor Booster Stage</h2>
+<p>Using the steps described above, I now describe the implementation of the <code>Transistor Booster Stage</code> part of the model.</p>
+<p>The first step would be to put the given continuous-time transfer function in the form of the bilinear transform template
+$$
+H(s) = \frac{s^2}{s^2 + (\omega_1 + \omega_2)s + \omega_1 \omega_2}
+$$
+From here, the continuous-time coefficients can be easily extracted
+$$
+b_2 = 1
+$$
+$$
+b_1 = 0
+$$
+$$
+b_0 = 0
+$$
+$$
+a_2 = 1
+$$
+$$
+a_1 = \omega_1 + \omega_2 = 2\pi 3 + 2\pi 600 = 1206\pi
+$$
+$$
+a_0 = \omega_1 \omega_2 = (2\pi 3)(2 \pi 600) = 7200\pi^2
+$$</p>
+<p>Working the templates for the discrete-time coefficients results in the following
+$$
+B_0 = 4fs^2
+$$
+$$
+B_1 = -8fs^2
+$$
+$$
+B_2 = 4fs^2
+$$
+$$
+A_0 = 7200\pi^2 + 2412\pi fs + 4fs^2
+$$
+$$
+A_1 = 14400\pi^2 - 8fs^2
+$$
+$$
+A_2 = 7200\pi^2 - 2412\pi fs + 4fs^2
+$$</p>
+<p>Showing once again the template of the second-order discrete-time transfer function
+$$
+H(z) = \frac{B_0 + B_1 z^{-1} + B_2 z^{-2}}{A_0 + A_1 z^{-1} + A_2 z^{-2}}
+$$</p>
+<p>Plugging the values of the coefficients recently found, gives the following equation
+$$
+{\scriptsize H(z) = \frac{4fs^2 - 8fs^2 z^{-1} + 4fs^2 z^{-2}}{(7200\pi^2 + 2412\pi fs + 4fs^2) +(14400\pi^2 - 8fs^2) z^{-1} + (7200\pi^2 - 2412\pi fs + 4fs^2) z^{-2}}}
+$$</p>
+<p>After dividing by $4$, factorizing $fs$, and doing some algebra to simplify the equation, this can be expressed as:
+$$
+{\small H(z) = \frac{1 -2 z^{-1} + z^{-2}}{(1800 \Omega^2 + 603 \Omega + 1) + (3600 \Omega^2 - 2) z^{-1} + (1800\Omega^2 - 603\Omega + 1) z^{-2}} }
+$$</p>
+<p>with $\Omega = \frac{\pi}{fs}$</p>
+<p>The implementation of this discrete-time transfer function results in a filter with the following magnitude response:</p>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-magnitude-response-of-the-implemented-transistor-booster-stage-uncorrected">
+
+
+  <a data-fancybox="" href="/img/mumt618/original_plot_bjt.png" data-caption="Magnitude response of the implemented Transistor Booster Stage (uncorrected)">
+
+
+  <img src="/img/mumt618/original_plot_bjt.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption data-pre="Figure " data-post=":" class="numbered">
+    Magnitude response of the implemented Transistor Booster Stage (uncorrected)
+  </figcaption>
+
+
+</figure>
+
+<p>By inspecting the original magnitude response shown in the paper, it can be concluded that the implemented filter should output above $30dB$ of gain in its bandpass.</p>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-magnitude-response-of-the-transistor-booster-stage-shown-at-yeh-et-al-2007">
+
+
+  <a data-fancybox="" href="/img/mumt618/corrected_plot_bjt.png" data-caption="Magnitude response of the Transistor Booster Stage shown at Yeh et al. (2007)">
+
+
+  <img src="/img/mumt618/corrected_plot_bjt.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption data-pre="Figure " data-post=":" class="numbered">
+    Magnitude response of the Transistor Booster Stage shown at Yeh et al. (2007)
+  </figcaption>
+
+
+</figure>
+
+<p>Luckily, in the corresponding section of this stage, the paper mentions that the expected gain in the bandpass is, in fact, $36dB$. Using this information, an additional gain, $g$, is included in the discrete-time transfer function:</p>
+<p>$$
+{\small H(z) = \frac{g(1 -2 z^{-1} + z^{-2})}{(1800 \Omega^2 + 603 \Omega + 1) + (3600 \Omega^2 - 2) z^{-1} + (1800\Omega^2 - 603\Omega + 1) z^{-2}} }
+$$</p>
+<p>where the equation, $36dB = \log_{10}(g) * 20$, can be used to obtain the value of $g$</p>
+<p>$$
+g = 10^{\frac{36}{20}} = 63.0957
+$$</p>
+<p>The resulting magnitude response resembles much more the magnitude response shown in the paper</p>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-magnitude-response-of-the-implemented-transistor-booster-stage-corrected">
+
+
+  <a data-fancybox="" href="/img/mumt618/corrected_plot_bjt.png" data-caption="Magnitude response of the implemented Transistor Booster Stage (corrected)">
+
+
+  <img src="/img/mumt618/corrected_plot_bjt.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption data-pre="Figure " data-post=":" class="numbered">
+    Magnitude response of the implemented Transistor Booster Stage (corrected)
+  </figcaption>
+
+
+</figure>
+
+<p>This filter&mdash;including its correction&mdash;can be implemented with the following <code>MATLAB</code> function:</p>
+<pre><code class="language-matlab">% Transistor Booster Stage
+% Implementation by Nestor Napoles Lopez
+% based on the paper by Yeh et al. (2007)
+
+function y = bjtfilt(x, fs)
+
+% After working the math, I put all the discrete-time
+% coefficients in terms of this variable coeff
+coeff = pi/fs;
+
+B0 = 1;
+B1 = -2;
+B2 = 1;
+
+A0 = 1800.*coeff.^2 + 603.*coeff + 1;
+A1 = 3600.*coeff.^2 - 2;
+A2 = 1800.*coeff.^2 - 603.*coeff + 1;
+
+% We obtain the gain from
+% 36dB = log10(x) * 20
+amp = 10.^(36/20);
+B = amp .* [B0, B1, B2];
+A = [A0, A1, A2];
+
+y = filter(B, A, x);
+
+end
+</code></pre>
+<h2 id="implementation-of-the-op-amp-gain-stage">Implementation of the Op-Amp Gain Stage</h2>
+<p>Just as done during the <code>Transistor Booster Stage</code>, the implementation of the <code>Op-Amp Gain Stage</code> starts from a given continuous-time transfer function
+$$
+H(s) = \frac{(s + \frac{1}{R_t C_c}) (s + \frac{1}{R_b C_z}) + \frac{s}{R_b C_c}}{(s + \frac{1}{R_t C_c})(s + \frac{1}{R_b C_z})}
+$$</p>
+<p>Putting this transfer function in the form of the bilinear transform template
+$$
+H(s) = \frac{s^2 + (\frac{1}{R_b C_z} + \frac{1}{R_t C_c} + \frac{1}{R_b C_c})s + \frac{1}{R_t C_c R_b C_z}}{s^2 + (\frac{1}{R_b C_z} + \frac{1}{R_t C_c})s + \frac{1}{R_t C_c R_b C_z}}
+$$</p>
+<p>The continous-time coefficients can be obtained
+$$
+b_2 = 1
+$$
+$$
+b_1 = \frac{1}{R_b C_z} + \frac{1}{R_t C_c} + \frac{1}{R_b C_c}
+$$
+$$
+b_0 = \frac{1}{R_t C_c R_b C_z}
+$$
+$$
+a_2 = 1
+$$
+$$
+a_1 = \frac{1}{R_b C_z} + \frac{1}{R_t C_c}
+$$
+$$
+a_0 = \frac{1}{R_t C_c R_b C_z}
+$$</p>
+<p>Some of these coefficients are equivalent (e.g., $a_0 = b_0$), therefore, they can be summarized in the following coefficients:
+$$
+ab_2 = 1
+$$
+$$
+a_1 = \frac{1}{R_b C_z} + \frac{1}{R_t C_c}
+$$
+$$
+b_1 = a_1 + \frac{1}{R_b C_c}
+$$
+$$
+ab_0 = \frac{1}{R_t C_c R_b C_z}
+$$</p>
+<p>The next step is to obtain the discrete-time coefficients, these can be expressed in terms of the simplified list of continuous-time coefficients presented above:
+$$
+B_0 = ab_0 + b_1 c + c^2
+$$
+$$
+B_1 = 2ab_0 - 2c^2
+$$
+$$
+B_2 = ab_0 - b_1 c + c^2
+$$
+$$
+A_0 = ab_0 + a_1 c + c^2
+$$
+$$
+A_1 = 2ab_0 - 2c^2
+$$
+$$
+A_2 = ab_0 - a_1 c + c^2
+$$</p>
+<p>In this case, the resulting magnitude response</p>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-magnitude-response-of-the-implemented-op-amp-gain-stage">
+
+
+  <a data-fancybox="" href="/img/mumt618/opamp_original.png" data-caption="Magnitude response of the implemented Op-Amp Gain Stage">
+
+
+  <img src="/img/mumt618/opamp_original.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption data-pre="Figure " data-post=":" class="numbered">
+    Magnitude response of the implemented Op-Amp Gain Stage
+  </figcaption>
+
+
+</figure>
+
+<p>is quite similar to the magnitude response shown in the paper</p>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-magnitude-response-of-the-op-amp-gain-stage-shown-at-yeh-et-al-2007">
+
+
+  <a data-fancybox="" href="/img/mumt618/opamp_paper.png" data-caption="Magnitude response of the Op-Amp Gain Stage shown at Yeh et al. (2007)">
+
+
+  <img src="/img/mumt618/opamp_paper.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption data-pre="Figure " data-post=":" class="numbered">
+    Magnitude response of the Op-Amp Gain Stage shown at Yeh et al. (2007)
+  </figcaption>
+
+
+</figure>
+
+<p>The different colors of the first plot represent the magnitude response with values of $D$ going from $0.1$ to $1.0$. This is the  <code>MATLAB</code> function that implements this filter:</p>
+<pre><code class="language-matlab">% Op-Amp Gain Stage
+% Implementation by Nestor Napoles Lopez
+% based on the paper by Yeh et al. (2007)
+
+function y = opampfilt(x, fs, DIST)
+
+% Resistors and capacitors from the model
+Rt = 100000 * DIST;
+Rb = 100000*(1-DIST) + 4700;
+Cz = 0.000001;
+Cc = 0.000000000250;
+
+% Constant for the bilinear transform
+c = 2*fs;
+
+% Continuous-time coefficients (reduced)
+ab0 = 1 / (Rt*Cc*Rb*Cz);
+a1 = 1/(Rb*Cz) + 1/(Rt*Cc);
+b1 = a1 + 1/(Rb*Cc);
+
+% Discrete-time coefficients
+B0 = ab0 + b1*c + c.^2;
+B1 = 2*ab0 - 2*c.^2;
+B2 = ab0 - b1*c + c.^2;
+
+A0 = ab0 + a1*c + c.^2;
+A1 = B1;
+A2 = ab0 - a1*c + c.^2;
+
+B = [B0, B1, B2];
+A = [A0, A1, A2];
+
+y = filter(B, A, x);
+
+end
+</code></pre>
+<h3 id="diode-clipper">Diode-Clipper</h3>
+<p>At the end of the <code>Op-Amp Gain Stage</code>, there is an additional step that simulates the diode that clips the samples exceeding a gain threshold, in the case of the digital implementation, that threshold consists of $abs(x[n]) \geq 1.0$. The diode-clipper has been implemented using one of the proposed methods in the paper:</p>
+<p>$$
+\text{clipper}(x) = \frac{x}{(1 + |x|^n)^{1/n}}
+$$</p>
+<p>with $n = 2.5$</p>
+<p>The <code>MATLAB</code> code for the clipping function is the following:</p>
+<pre><code class="language-matlab">% Diode clipper
+% Implementation by Nestor Napoles Lopez, December 2018
+% based on the paper by Yeh et al. (2007)
+
+function x = diodeclip(x)
+
+n = 2.5;
+
+for i=1:length(x)
+    x(i) = x(i) / (1 + abs(x(i)).^n).^(1/n);
+end
+
+end
+</code></pre>
+<p>As a final step, I provide a script that cascades the two stages of the models to process an input audio example:</p>
+<pre><code class="language-matlab">% DS-1, main script
+% Implementation by Nestor Napoles Lopez, December 2018
+% based on the paper by Yeh et al. (2007)
+
+% Sample audio
+[x, fs] = audioread('guitar_clean.wav');
+
+% Bipolar Junction Transistor Stage
+y = bjtfilt(x, fs);
+
+% Op-amp Gain Stage
+D = 1; % D lies between [0, 1]
+y = opampfilt(y, fs, D);
+
+% Diode clipper
+y = diodeclip(y);
+
+s = audioplayer(y, fs);
+play(s);
+</code></pre>
+<p>Here is an example of the model applied to an audio sample of a clean electric guitar<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>:</p>
+<p><a href="/audio/mumt618/guitar_clean.wav">Original audio</a> $ $</p>
+<p><a href="/audio/mumt618/bjt.wav">Transistor Booster Stage only</a> $ $</p>
+<p><a href="/audio/mumt618/opamp.wav">Op-Amp Gain Stage only</a> $ $</p>
+<p><a href="/audio/mumt618/bjt_opamp.wav">Transistor Booster Stage and Op-Amp Gain Stage</a> $ $</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>This audio sample has been obtained from 
+<a href="https://freesound.org/people/LG/sounds/16054/" target="_blank" rel="noopener">FreeSound</a>. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/docs/backup/" rel="prev"></a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on Dec 9, 2018</p>
+
+          
+
+
+
+
+
+
+  
+  
+
+<p class="edit-page">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/docs/mumt618.md">
+    <i class="fas fa-pen pr-2"></i>Edit this page
+  </a>
+</p>
+
+
+
+
+          
+
+
+          
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2020 X-Lab
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

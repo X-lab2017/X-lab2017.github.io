@@ -33,5 +33,64 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Harmalysis: A Language for the Annotation of Roman Numerals in Symbolic Music Representations</title>
+      <link>http://www.x-lab.info/publication/harmalysis/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.x-lab.info/publication/harmalysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Do-Re-Myth: An Ear Training Game</title>
+      <link>http://www.x-lab.info/publication/doremyth/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.x-lab.info/publication/doremyth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Key-Finding Based on a Hidden Markov Model and Key Profiles</title>
+      <link>http://www.x-lab.info/publication/keydetection19/</link>
+      <pubDate>Sat, 09 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.x-lab.info/publication/keydetection19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Effects of Translation Between Symbolic Music Formats: A Case Study with Humdrum, Lilypond, MEI, and MusicXML</title>
+      <link>http://www.x-lab.info/publication/effects_of_translation/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.x-lab.info/publication/effects_of_translation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Musical Tic-Tac-Toe</title>
+      <link>http://www.x-lab.info/publication/musical_tictactoe/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.x-lab.info/publication/musical_tictactoe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dandelot - Reading Music as a Game</title>
+      <link>http://www.x-lab.info/publication/dandelot/</link>
+      <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.x-lab.info/publication/dandelot/</guid>
+      <description>&lt;h2 id=&#34;the-video-looks-promising-where-is-the-code&#34;&gt;The video looks promising, where is the code?&lt;/h2&gt;
+&lt;p&gt;Although the intention of &lt;em&gt;dandelot&lt;/em&gt; is to be available for free for anyone to play, some of the assets used for developing the game are proprietary. For the time being, the code is not available online.&lt;/p&gt;
+&lt;p&gt;If you &lt;strong&gt;really&lt;/strong&gt; want to play it, drop an email and I will send you a compiled version of the game. If you want the code to extend it or fork it into your own, we can talk about that.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Encoding Matters</title>
+      <link>http://www.x-lab.info/publication/encoding_matters/</link>
+      <pubDate>Fri, 28 Sep 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.x-lab.info/publication/encoding_matters/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
