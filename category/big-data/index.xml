@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>big data | X-Lab - 技术传播文明，践行同步世界</title>
+    <title>Big Data | X-Lab - 技术传播文明，践行同步世界</title>
     <link>http://www.x-lab.info/category/big-data/</link>
       <atom:link href="http://www.x-lab.info/category/big-data/index.xml" rel="self" type="application/rss+xml" />
-    <description>big data</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 X-Lab</copyright><lastBuildDate>Thu, 04 Jun 2020 14:02:35 +0800</lastBuildDate>
+    <description>Big Data</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 X-Lab</copyright><lastBuildDate>Fri, 05 Jun 2020 14:02:35 +0800</lastBuildDate>
     <image>
       <url>http://www.x-lab.info/images/logo_hu3ace0f88f5b266a672736d37108d6485_140636_300x300_fit_lanczos_2.png</url>
-      <title>big data</title>
+      <title>Big Data</title>
       <link>http://www.x-lab.info/category/big-data/</link>
     </image>
     
     <item>
       <title>Hypertrons</title>
       <link>http://www.x-lab.info/project/hypertrons/</link>
-      <pubDate>Thu, 04 Jun 2020 14:02:35 +0800</pubDate>
+      <pubDate>Fri, 05 Jun 2020 14:02:35 +0800</pubDate>
       <guid>http://www.x-lab.info/project/hypertrons/</guid>
       <description></description>
     </item>
