@@ -38,6 +38,11 @@
   </url>
   
   <url>
+    <loc>http://www.x-lab.info/authors/</loc>
+    <lastmod>2020-06-07T16:43:13+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.x-lab.info/post/</loc>
     <lastmod>2020-06-07T16:43:13+08:00</lastmod>
   </url>
@@ -277,6 +282,10 @@
   </url>
   
   <url>
+    <loc>http://www.x-lab.info/author/zoutao/</loc>
+  </url>
+  
+  <url>
     <loc>http://www.x-lab.info/author/%E4%B8%87%E5%85%B4/</loc>
   </url>
   
@@ -422,6 +431,10 @@
   
   <url>
     <loc>http://www.x-lab.info/author/%E9%82%B0%E4%B8%BD%E5%AA%9B/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.x-lab.info/author/%E9%82%B9%E9%9F%AC/</loc>
   </url>
   
   <url>
