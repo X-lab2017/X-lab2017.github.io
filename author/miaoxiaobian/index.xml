@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>miaoxiaobian | X-Lab - 技术传播文明，践行同步世界</title>
+    <link>http://www.x-lab.info/author/miaoxiaobian/</link>
+      <atom:link href="http://www.x-lab.info/author/miaoxiaobian/index.xml" rel="self" type="application/rss+xml" />
+    <description>miaoxiaobian</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 X-Lab</copyright>
+    <image>
+      <url>http://www.x-lab.info/images/logo_hu3ace0f88f5b266a672736d37108d6485_140636_300x300_fit_lanczos_2.png</url>
+      <title>miaoxiaobian</title>
+      <link>http://www.x-lab.info/author/miaoxiaobian/</link>
+    </image>
+    
+    <item>
+      <title>苗晓变</title>
+      <link>http://www.x-lab.info/author/%E8%8B%97%E6%99%93%E5%8F%98/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.x-lab.info/author/%E8%8B%97%E6%99%93%E5%8F%98/</guid>
+      <description>&lt;h2 id=&#34;a-new-member-in-x-lab&#34;&gt;A new member in X-Lab.&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
