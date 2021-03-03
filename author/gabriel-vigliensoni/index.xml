@@ -5,7 +5,7 @@
     <link>http://www.x-lab.info/author/gabriel-vigliensoni/</link>
       <atom:link href="http://www.x-lab.info/author/gabriel-vigliensoni/index.xml" rel="self" type="application/rss+xml" />
     <description>Gabriel Vigliensoni</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 X-Lab</copyright><lastBuildDate>Thu, 30 May 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 X-Lab</copyright><lastBuildDate>Thu, 30 May 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://www.x-lab.info/images/logo_hu3ace0f88f5b266a672736d37108d6485_140636_300x300_fit_lanczos_2.png</url>
       <title>Gabriel Vigliensoni</title>
@@ -14,17 +14,17 @@
     
     <item>
       <title>The Effects of Translation Between Symbolic Music Formats: A Case Study with Humdrum, Lilypond, MEI, and MusicXML</title>
-      <link>http://www.x-lab.info/publication/effects_of_translation/</link>
+      <link>http://www.x-lab.info/paperdemo/effects_of_translation/</link>
       <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
-      <guid>http://www.x-lab.info/publication/effects_of_translation/</guid>
+      <guid>http://www.x-lab.info/paperdemo/effects_of_translation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Encoding Matters</title>
-      <link>http://www.x-lab.info/publication/encoding_matters/</link>
+      <link>http://www.x-lab.info/paperdemo/encoding_matters/</link>
       <pubDate>Fri, 28 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>http://www.x-lab.info/publication/encoding_matters/</guid>
+      <guid>http://www.x-lab.info/paperdemo/encoding_matters/</guid>
       <description></description>
     </item>
     
