@@ -1,0 +1,47 @@
+site_name: Xlab
+nav:
+  - Home:
+      - "Xlab_Home": index.md
+      - "About us": about.md
+  - People: members.md
+  - Project:
+      - project/projects.md
+      - "Opendigger": project/opendigger README.md
+      - "hypercrx": project/hypercrx README.md
+  - Blog: blog/Using knowledge units of programming languages to_recommend reviewers for pull requests_ an empirical study.md
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  features:
+    - navigation.instant # 无需完全重新加载
+    - navigation.instant.progress # 网页进度条 400ms后显示
+    - navigation.tabs # 头顶式分页
+    - navigation.sections # 侧边栏文章以二级导航格式显示
+    - navigation.path # 显示文章路径
+    - toc.follow # 侧边栏目录跟随
+    - toc.integrate # 侧边栏目录整合
+    - navigation.top # 返回顶部
+    - header.autohide # 标题自动隐藏
+
+# extra:
+#   alternate:
+#     - name: English
+#       link: /xlab-github-home-en/
+#       lang: en
+#     - name: 中文
+#       link: /xlab-github-home-zh/
+#       lang: zh
+
+plugins:
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: zh
+          name: 中文
+          build: true
