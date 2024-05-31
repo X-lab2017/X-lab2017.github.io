@@ -27,4 +27,4 @@
 ```python
 - "doc_name" : doc Directory
 ```
-![贡献示例图.png](images/贡献示例图.png)
+![贡献示例图.png](https://cdn.nlark.com/yuque/0/2024/png/39023202/1717143452400-8c459fbe-3d21-40ed-9ed6-23f20af83466.png#averageHue=%23111111&clientId=u1a29891f-3cb5-4&from=paste&height=226&id=u362de96f&originHeight=451&originWidth=2261&originalType=binary&ratio=2&rotation=0&showTitle=false&size=138948&status=done&style=none&taskId=u16fc07f3-3ad9-493f-90f1-d8bd533d2d7&title=&width=1130.5)
