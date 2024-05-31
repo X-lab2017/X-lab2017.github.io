@@ -8,7 +8,8 @@ nav:
       - project/projects.md
       - "Opendigger": project/opendigger README.md
       - "hypercrx": project/hypercrx README.md
-  - Blog: blog/Using knowledge units of programming languages to_recommend reviewers for pull requests_ an empirical study.md
+  - Blog:
+      - "Knowledge unit blog": blog/Using knowledge units of programming languages to_recommend reviewers for pull requests_ an empirical study.md
 
 theme:
   name: material
