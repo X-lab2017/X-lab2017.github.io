@@ -3,11 +3,15 @@ nav:
   - Home:
       - "Xlab_Home": index.md
       - "About us": about.md
-  - People: members.md
+  - Achievements:
+      - achievement/achievements.md
+  - Publications:
+      - publication/publications.md
   - Project:
       - project/projects.md
       - "Opendigger": project/opendigger README.md
       - "hypercrx": project/hypercrx README.md
+  - People: members.md
   - Blog:
       - "Knowledge unit blog": blog/Using knowledge units of programming languages to_recommend reviewers for pull requests_ an empirical study.md
 
