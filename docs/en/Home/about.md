@@ -1,6 +1,6 @@
 # About us
 
-![xlab大图](images/xlab大图.png)
+![xlab大图](../../images/xlab大图.png)
 
 ## What we are
 X-Lab is a combination of two leading and pioneering laboratories from computer science and data science and engineering respectively in Tongji University (同济大学) and East China Normal University (华东师范大学).The lab is supported by a number of core members, including doctorial supervisors, Ph.D students, master students and undergraduate students.

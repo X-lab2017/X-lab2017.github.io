@@ -1,19 +1,27 @@
 site_name: Xlab
 nav:
   - Home:
-      - "Xlab_Home": index.md
-      - "About us": about.md
+      - "Xlab_Home": Home/index.md
+      - "About us": Home/about.md
+      - "news&events":
+          - "news": Home/news/news.md
+          - "events": Home/events/events.md
   - Achievements:
-      - achievement/achievements.md
-  - Publications:
-      - publication/publications.md
-  - Project:
-      - project/projects.md
-      - "Opendigger": project/opendigger README.md
-      - "hypercrx": project/hypercrx README.md
-  - People: members.md
-  - Blog:
-      - "Knowledge unit blog": blog/Using knowledge units of programming languages to_recommend reviewers for pull requests_ an empirical study.md
+      - Achievements/achievements.md
+      - "Publications":
+          - "Publications": Achievements/publications/publications.md
+      - "Industrial impact":
+          - "Industrial impact": Achievements/industrial_impact/industrial_impact.md
+  - Project&Governance:
+      - Project&Governance/projects/projects.md
+      - "Opendigger": Project&Governance/projects/opendigger README.md
+      - "Hypercrx": Project&Governance/projects/hypercrx README.md
+      - "Governance":
+          - "Governance": Project&Governance/governance/standards.md
+  - Members:
+      - Members/members.md
+      - "Blog":
+          - "Knowledge unit": Members/blog/Using knowledge units of programming languages to_recommend reviewers for pull requests_ an empirical study.md
 
 theme:
   name: material
