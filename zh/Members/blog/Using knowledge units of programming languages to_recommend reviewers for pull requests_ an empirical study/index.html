@@ -1,0 +1,1288 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../members/">
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+<title>Xlab</title>
+
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#using-knowledge-units-of-programming-languages-to_recommend-reviewers-for-pull-requests_-an-empirical-study" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="Xlab" class="md-header__button md-logo" aria-label="Xlab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xlab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Knowledge unit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../Members/blog/Using%20knowledge%20units%20of%20programming%20languages%20to_recommend%20reviewers%20for%20pull%20requests_%20an%20empirical%20study/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="zh" class="md-select__link">
+              中文
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Home/" class="md-tabs__link">
+          
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Achievements/achievements/" class="md-tabs__link">
+          
+  
+  Achievements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Project%26Governance/projects/projects/" class="md-tabs__link">
+          
+  
+  Project&Governance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../members/" class="md-tabs__link">
+          
+  
+  Members
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Xlab" class="md-nav__button md-logo" aria-label="Xlab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Xlab
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Home/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xlab_Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Home/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    news&events
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            news&events
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Home/news/news/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    news
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Home/events/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Achievements
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Achievements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Achievements/achievements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Achievements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Publications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Publications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Achievements/publications/publications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Industrial impact
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Industrial impact
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Achievements/industrial_impact/industrial_impact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Industrial impact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Project&Governance
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project&Governance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Project%26Governance/projects/projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🔭 Vision: 数字文明的新思想、新方法、新工具学习圣地
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Project%26Governance/projects/opendigger%20README/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Opendigger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Project%26Governance/projects/hypercrx%20README/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypercrx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Governance
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Governance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Project%26Governance/governance/standards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Governance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Members
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Members
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../members/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Members
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Knowledge unit
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Knowledge unit
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      摘要
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      结论
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ku" class="md-nav__link">
+    <span class="md-ellipsis">
+      KU
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ku_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何发现KU
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据收集过程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ku_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何通过 KU 定义开发者专业档案（对开发者进行表示）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ku_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何证明基于 KU 分组的开发者档案对代码审查者推荐有帮助
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurec" class="md-nav__link">
+    <span class="md-ellipsis">
+      KUREC的原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KUREC的原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      评估方法中的关键假设
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      构建方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      推荐方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      相关工作可以以后阅读的内容
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      潜在的问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      本文与开发者技能定义的关联
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p><meta name="referrer" content="no-referrer"/></p>
+<h1 id="using-knowledge-units-of-programming-languages-to_recommend-reviewers-for-pull-requests_-an-empirical-study">Using knowledge units of programming languages to_recommend reviewers for pull requests_ an empirical study</h1>
+<h2 id="_1">摘要</h2>
+<p>为给定的代码更改（本文指pr）寻找合适的代码审查者。使用的基本工具叫 <strong>KU</strong>（knowledge unit）。设计了一个推荐系统 <strong>KUREC</strong> 。其中，文章根据检测到的 KU 生成开发人员的的专业知识档案。同时，文章将 KUREC 与其他七个基准推荐器做了比较。效果与第一梯队的 RF 并列第一且 KUREC 的推荐更加稳定，因为其四分位距更小，所以可能更加值得信赖。
+文章还设计了组合推荐器，得出结论是组合推荐器优于包括 KUREC 在内的所有单一推荐器。目前比较好的组合方式是与 AD_HYBRID 相结合的推荐器。文章提出期望：</p>
+<ul>
+<li>未来可以将 KU-based 推荐器作为基准。</li>
+<li>未来可以研究与 KU 相结合的组合推荐器。</li>
+</ul>
+<h2 id="_2">结论</h2>
+<p>基本是对摘要的复述和一些对未来研究的展望</p>
+<h2 id="ku">KU</h2>
+<p>KU 定义：文章将 KU 定义为特定编程语言的一个或多个构件所提供的一整套关键能力。
+KU 数据来源： 10个 github 上积极维护的 java 项目， 包括 29000 条 commits 和 65000 条pr。
+KU 定义的基本原理中要避免KU与上下文的过度关联
+在具体的 KU 定义过程中，使用 Oracle 的 java 考试作为 KU 但是会排除一些子主题，例如解释概念的主题和不能被自动提取的主题等等。
+<strong>KU 包括一系列，有如下，即一些列特定类型功能的代码块</strong>
+<img alt="909e3fabef2c17a74452b4011c5dd17c_5_Table_1_614574616.png" src="https://cdn.nlark.com/yuque/0/2024/png/39023202/1712030565364-46e72608-7fe6-4a31-b833-81f2d1aa19cd.png#averageHue=%23ededed&amp;clientId=u0bf7242b-61f3-4&amp;from=drop&amp;height=1566&amp;id=u929e89ef&amp;originHeight=1566&amp;originWidth=1041&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=260762&amp;status=done&amp;style=none&amp;taskId=uf25209b9-245d-4746-8ad0-ad117c168d5&amp;title=&amp;width=1041" /></p>
+<h2 id="ku_1">如何发现KU</h2>
+<p>如何分析的 Java 源代码是通过 Eclipse 的 JDT 框架进行分析，它会给出源码的抽象语法树 （AST）并且提供这个树的每个元素，包括名称、类型和表达式等等。
+通过这个框架以及事先定义的 KU ，文章为每个文件的 KU 进行计数，用一个向量存储，包括每个 KU 的计数。</p>
+<h2 id="_3">数据收集过程</h2>
+<p>收集目的项目的 commit 和 pr 。首先项目是积极维护的，标签要求 java 。 star 不少于 100. 过去一年有提交，之后进行降序排序。这个步骤需要下载目标项目的提交历史，中间使用 PyDriller 分析这个历史数据，从而获得诸如提交信息、id、作者姓名和日期等信息。
+这里【3】中说的用 KU 表示开发人员专业知识我的理解是，针对某个开发者提交的commit，分析其改动部分的 KU ，通过这改动部分的 KU 对开发人员进行表示。具体如何通过 KU 表示开发者在下一节
+<img alt="909e3fabef2c17a74452b4011c5dd17c_9_Figure_2_-1337592130.png" src="https://cdn.nlark.com/yuque/0/2024/png/39023202/1712032549578-466933d3-6ed6-427a-9a84-ee03f8f98835.png#averageHue=%23e6e6e6&amp;clientId=u0bf7242b-61f3-4&amp;from=drop&amp;height=1026&amp;id=u75b8e219&amp;originHeight=1026&amp;originWidth=1032&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=111365&amp;status=done&amp;style=none&amp;taskId=ua0931c25-b543-4fd7-941b-3617fe942c6&amp;title=&amp;width=1032" />
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/39023202/1712035303556-2e52c112-4090-4c9e-adea-85ca75d51627.png#averageHue=%23e9e8e8&amp;clientId=u0bf7242b-61f3-4&amp;from=paste&amp;height=301&amp;id=u31a07447&amp;originHeight=602&amp;originWidth=2026&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=113786&amp;status=done&amp;style=none&amp;taskId=u87808efa-59d5-4444-bd3e-ea9e072dabb&amp;title=&amp;width=1013" /></p>
+<h2 id="ku_2">如何通过 KU 定义开发者专业档案（对开发者进行表示）</h2>
+<ol>
+<li>通过每个 commit 中改动的部分挖掘 KU ，并于开发者联系起来。</li>
+<li>对开发者进行表示的时候不是针对部分 commit ，而是整个 java 文件的 commit 与 pr</li>
+<li>通过 KU 表示开发者的方法是用一个 28 位的 KU 向量表示。每个位置对应一个 KU 。为进行标准化。每个 KU 对应一个比例值，每个比例值的计算方式为该开发者该类型的 KU 总数 除以 所有开发者的该类型的所有 KU 数。得到一个 28 维向量，每个值是一个比例。 这个向量叫Pku (D)</li>
+</ol>
+<p><img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/39023202/1712035629750-31f06f9d-54b2-462e-a071-975aec5dffde.png#averageHue=%23eeeeed&amp;clientId=u0bf7242b-61f3-4&amp;from=paste&amp;height=448&amp;id=u4643641f&amp;originHeight=896&amp;originWidth=1972&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=179699&amp;status=done&amp;style=none&amp;taskId=u40f25754-91aa-4360-891f-963b36c4df5&amp;title=&amp;width=986" /></p>
+<h2 id="ku_3">如何证明基于 KU 分组的开发者档案对代码审查者推荐有帮助</h2>
+<ol>
+<li>先 PCA 降维，运用K-means聚类算法进行聚类</li>
+<li>因为 k-means 的聚类集群是人工设定的参数，所以文章从 2-100 进行试验，并用轮廓系数的中位数进行比较。（为什么用中位数而不是传统的平均数是因为中位数对异常值的表现更加稳健，例如只有少数糟糕聚类对象的聚类应该被认为是一个整体良好的聚类）在产生的中位数轮廓为0.90中选择最大的 K 但不最大化 K 。</li>
+<li>结果有：基于 KU 的分类可以将开发者分为 71 个不同的类型，表面该方法具有良好的分类能力。这里区分不同类型的聚类还用到了<strong>基尼系数</strong>作为区分的手段。其中，这样的聚类方法中有57%的比例是单例集群，即集群中只有一个人。表面开发人员具有独特的 KU 配置。</li>
+<li>在文章示例中的观察结果是基尼系数为0.96 即存在一个包含大多数人的集体。</li>
+<li>文章通过条形图表面不同聚类的开发者在与不同 KU 的关联程度，从图表结果可以看到不同聚类关联的 KU 显著不同。</li>
+<li>文章的工作分析了具有良好经验的开发者，其定义为在某方面 KU 高于整个数据集的中值 KU（数值上的体现是概率值的比较）。</li>
+</ol>
+<h2 id="kurec">KUREC的原理</h2>
+<h3 id="_4">评估方法中的关键假设</h3>
+<p>对于任何一个给定的Pull Request（PR），其代码审查者最有可能是那些在该PR更改文件中涉及的知识单元（KUs）方面的专家。换言之，如果一个审查者对PR中修改的代码所使用的特定编程语言特性或功能有深入了解和实践经验，那么他/她就被视为最适合对此PR进行审查的人选。</p>
+<h3 id="_5">构建方式</h3>
+<p>基于历史的 pr 数据，训练测试 82开。这里提到了一些之前的研究也是采用基于历史的数据。也许以后可以用。</p>
+<h3 id="_6">推荐方式</h3>
+<p>基于开发者的专业配置文件和审查配置文件给出分数，根据分数降序排序进行推荐，推荐完成后更新配置文件。（如何更新？）专业配置文件是基于 commit。审查配置文件基于 pr。
+专业分数的计算同时考虑开发者最近是否有参与 这个 commit 或 pr 相关的 KU 的工作，也就是新鲜度。
+<strong>推荐器准确度的计算方式在论文23页</strong></p>
+<h2 id="_7">相关工作可以以后阅读的内容</h2>
+<ol>
+<li>评估推荐准确度的研究</li>
+<li>推荐准确性和审查工作负载分布之间的平衡</li>
+<li><strong>开发人员的专业表示</strong></li>
+<li><strong>KU</strong></li>
+</ol>
+<h2 id="_8">潜在的问题</h2>
+<ol>
+<li>没有针对第三方库建立 KU 而是基于原项目</li>
+<li>使用 java 考试中的题目帮助建立的 KU 可能涵盖的知识是有限的</li>
+<li>实验得出的开发人员分类最佳数量不一定好</li>
+<li>仅针对java项目进行了研究</li>
+<li>使用 KU 的结果不一定是泛化（通用）的，可以尝试结合其他指标在不同的主题下进行研究，比如不同的编程语言。</li>
+</ol>
+<h2 id="_9">本文与开发者技能定义的关联</h2>
+<p>这应该是我阅读这些文献的目的和意义。</p>
+<ol>
+<li>对开发者进行数据化的表示，也就是专业配置文件和审查配置文件，开发者在28个 KU 上的一个 28维向量</li>
+<li>如何利用这些配置文件进行专业分数计算，具体的计算方式在论文p20</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.sections", "navigation.path", "toc.follow", "toc.integrate", "navigation.top", "header.autohide"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
